@@ -1,0 +1,27 @@
+# Stage 1: Build the Go application
+FROM golang:alpine AS builder
+
+# Set the working directory inside the builder container
+WORKDIR /app
+
+# Copy the Go application files to the working directory
+COPY . .
+
+# Download dependencies and build the application
+RUN go get
+RUN go build -o urulink_message .
+
+# Stage 2: Create a minimal runtime image
+FROM alpine:latest
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the binary from the builder stage
+COPY --from=builder /app/urulink_message .
+
+# Expose the port your application is running on
+EXPOSE 8083
+
+# Define the command to run your application
+CMD ["./urulink_message"]
