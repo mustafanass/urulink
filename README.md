@@ -56,7 +56,3 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 ## Author
 
 Created by **Mustafa Naseer**. For more information, feel free to contact me.
-
----
-
-Thank you for checking out this chat application! Enjoy real-time communication with your peers.
