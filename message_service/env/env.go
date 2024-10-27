@@ -26,13 +26,13 @@ import (
 
 // EnvManager struct holds configuration values loaded from environment variables
 type EnvManger struct {
+	FilesServiceUrl      string
 	RabbitMQHost         string
 	RabbitMQUser         string
 	RabbitMQPassword     string
 	RabbitMQPort         string
 	RabbitMQExchangeName string
 	RabbitMQQueueName    string
-	FilesServiceUrl      string
 	DBHost               string
 	DBUser               string
 	DBPassword           string
