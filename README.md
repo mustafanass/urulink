@@ -39,7 +39,35 @@ To set up the chat application on your local machine, follow these steps:
 
 - Clone all microservices and use the Dockerfile inside each one to build the service.
 - Make sure to fill all required environment variables in `.env` files before building the Docker image.
-- Now WebSocket is started, you can access it from `ws://your-ip-or-domain:8083`.
+
+
+## How to Use It
+
+Once all microservices are up and running, follow these steps to start using the chat application:
+
+### 1. Register an Account
+First, you need to register an account using the Auth service:
+- Endpoint: ```POST http://<your-auth-service-ip>:8081/register```
+- Payload: Include necessary registration details (e.g., username, password).
+
+This will create a new user account for you in the system.
+
+### 2. Log In
+Once your account is created, log in to obtain an access token for authentication:
+- Endpoint: ```POST http://<your-auth-service-ip>:8081/login```
+- Payload: Provide your registered username and password.
+- Response: After a successful login, you’ll receive an accessToken in the response.
+
+This accessToken is required to establish an authenticated WebSocket connection.
+
+### 3. Connect to WebSocket
+To connect to WebSocket for real-time messaging:
+
+- Add the accessToken: Include the accessToken you received from the Auth service in the header of your WebSocket connection request.
+- WebSocket Endpoint: ```ws://<your-message-service-ip>:8083?receiver_id=<target-client-id>```
+- Replace ```<target-client-id>``` with the ID of the client you want to communicate with.
+
+This will establish a WebSocket connection, enabling real-time messaging between you and the specified client
 
 ## Note
 
