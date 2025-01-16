@@ -79,8 +79,14 @@ This project is licensed under the GNU General Public License v3.0 (GPL-3.0). Se
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
 ## Author
 
-Created by **Mustafa Naseer**. For more information, feel free to contact me.
+Build and Developed by Mustafa Naseer
+
+This project is intended for development and testing purposes. For production use, please ensure proper configuration of external services and security measures.
